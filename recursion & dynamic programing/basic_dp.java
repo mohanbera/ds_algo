@@ -71,3 +71,23 @@ public static int gridTravel(int m, int n) {
 
         return al[s];
     }
+
+static int countWayStringDp(String target, String[] a) {
+        int m = target.length();
+        int n = a.length;
+        int[] c = new int[m+1];
+        c[0] = 1;
+        for(int i=0;i<m+1;i++) {
+            if(c[i] == 0) continue;
+            String subStr = target.substring(i);
+            for (String s : a) {
+                if (subStr.startsWith(s)) {
+                    int ni = i + s.length();
+                    if (ni > m) continue;
+                    c[ni] += c[i];
+                }
+            }
+        }
+
+        return c[target.length()];
+    }
