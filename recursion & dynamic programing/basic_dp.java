@@ -72,7 +72,7 @@ public static int gridTravel(int m, int n) {
         return al[s];
     }
 
-static int countWayStringDp(String target, String[] a) {
+static int countWaysStringDp(String target, String[] a) {
         int m = target.length();
         int n = a.length;
         int[] c = new int[m+1];
